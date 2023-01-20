@@ -1,3 +1,8 @@
+:root {
+  --background-color: rgb(26, 26, 26);
+  --foreground-color-primary: rgb(231, 231, 231);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: var(--background-color);
+  color: var(--foreground-color-primary);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--foreground-color-primary);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#title-logo, #title-logo-2 {
+  width: 80rem;
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 0;
+  overflow:hidden;
+  animation: App-logo-spin infinite 190s linear;
+}
+
+#title-logo-2 { 
+  top: 5rem;
+  width: 50rem;
+  animation: App-logo-spin-anti infinite 150s linear 
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes App-logo-spin-anti {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+header.title {
+  position: relative;
+  width: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 25vh;
+  padding: 10px 0;
+  background-color: var(--foreground-color-primary);
+  color: var(--background-color);
+  z-index: 1;
+}
+
+
+ul.nav-list {
+  margin-top: 15rem;
+  font-size: large;
+}
+
+li.nav-link {
+  position: relative;
+  text-align: center;
+  margin-top: 1rem;
+  margin-right: 50px;
+  list-style-type: none;
 }
