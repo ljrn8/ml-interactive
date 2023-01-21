@@ -1,21 +1,18 @@
 import React from "react";
 
-const Title = () => {
+const Title = ({ image }) => {
   return (
-    <header
-      id="title"
-      style={{
-        position: "relative",
-        width: "fit-content",
-        height: "1vh",
-        textAlign: "center",
-        verticalAlign: "center",
-      }}
-    >
-      <h1 style={{ fontSize: "2.5rem" }}>Interactive Classification Models</h1>
-      <p>1 sentance synopsys and links here</p>
-    </header>
+    <>
+      <img src={image} alt="..." id="title-logo"></img>
+      <img src={image} alt="..." id="title-logo-2"></img>
+      <header className="title">
+        <h1 style={{ fontSize: "2.5rem" }}> Interactive ML Classifiers </h1>
+        <p> A breif look at some simple classifier algorithms </p>
+      </header>
+    </>
   );
 };
 
 export default Title;
+
+// TODO add the rotating style here
