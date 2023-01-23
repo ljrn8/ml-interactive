@@ -1,6 +1,8 @@
 :root {
   --background-color: rgb(26, 26, 26);
-  --foreground-color-primary: rgb(231, 231, 231);
+  --foreground-color-primary: rgb(236, 236, 236);
+  --foreground-color-unchanging: var(--foreground-color-primary);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,6 +15,8 @@ body {
 
   background-color: var(--background-color);
   color: var(--foreground-color-primary);
+
+  transition: all 3s ease;
 }
 
 ::-webkit-scrollbar {
@@ -31,21 +35,21 @@ code {
 }
 
 #title-logo, #title-logo-2 {
-  width: 80rem;
+  width: 70rem;
   position: absolute;
-  top: -4rem;
+  top: -5rem;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 0;
   overflow:hidden;
-  animation: App-logo-spin infinite 190s linear;
+  animation: App-logo-spin infinite 250s linear;
 }
 
 #title-logo-2 { 
-  top: 5rem;
-  width: 50rem;
-  animation: App-logo-spin-anti infinite 150s linear 
+  top: 1rem;
+  width: 60rem;
+  animation: App-logo-spin-anti infinite 180s linear 
 }
 
 @keyframes App-logo-spin {
@@ -83,3 +87,66 @@ li.nav-link {
   margin-right: 50px;
   list-style-type: none;
 }
+
+.section {
+  margin-top: 30rem;
+  position: relative;
+  text-align: center;
+}
+
+.graph {
+  background-color: var(--foreground-color-unchanging);
+}
+
+.graph > img#softGraph {
+  filter: brightness(93%);
+}
+
+.predictor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  margin-top: 0rem;
+  margin-left: 20%;
+  text-align: right;
+}
+
+#about {
+  padding-top: 20rem;
+  padding-bottom: 20rem
+}
+
+p {
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+p.score {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button:hover {
+  color: rgb(222, 144, 144);
+}
+
+button#color-switcher  > img {
+  position: relative;
+  width: auto;
+  margin: auto;
+  text-align: center;
+  width: 30%;
+}
+
