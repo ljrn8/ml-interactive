@@ -8,8 +8,6 @@ softmax = joblib.load('./softmax.joblib')
 svc = joblib.load('./svc.joblib')
 random_forest = joblib.load('./random_forest.joblib')
 
-# "/iris?key1=val1&key2=val2"
-
 
 @app.route("/predict")
 def predict():

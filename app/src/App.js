@@ -3,18 +3,19 @@ import svmRandom from "./assets/svmRandom.png";
 import XYPredictor from "./components/Predictor";
 import Appendix from "./components/Appendix";
 
-import flower from "./assets/flower.png";
+import flower from "./assets/flower-svgrepo-com.svg";
+import sun from "./assets/light-mode-svgrepo-com.svg";
 import softGraph from "./assets/softGraph.png";
 import svmMoons from "./assets/svmMoons.png";
-import RandomForest from "./assets/RandomForest.png";
+import randomForest from "./assets/RandomForest.png";
+
+import arrow from "./assets/back-svgrepo-com.svg";
 
 /*
  * TODO
- *
- * replace flower with svg graphic = orange
- *  git stasking on github
- * add third accent color
- *  top right fix a up arrow and color switcher
+ *  optional:
+ *    add latex
+ *    move sun to fixed
  *
  */
 
@@ -35,16 +36,19 @@ function App() {
   return (
     <div className="App">
       <Title image={flower} />
-      <Appendix />
+      <Appendix arrow={arrow}/>
       <button id="color-switcher" onClick={() => switchColors()}>
-        <img src={flower} alt="invert colors" />
+        <img src={sun} alt=" >> invert colors << "/>
       </button>
       <div className="section" id="About">
         <p>
           This website is a beginner project im using to develope skills in web
-          developement, data science and machine learning. Dont actually use
-          this website for learning about these models. TODO :: link to collab
-          here
+          frameworks, data science and machine learning. Dont actually use
+          this website for learning about these models as the explanations are pretty bad. 
+        </p>
+        <p>
+          You can view the jupyter notebook used to create the models and diagrams either
+          from within the git repo or on google collab <a href='https://colab.research.google.com/drive/13G2f7gqCxqQL72dSehzz9lSDlnvZIKQc?usp=sharing'>here</a>
         </p>
       </div>
 
@@ -66,7 +70,7 @@ function App() {
           Softmax regession requires that after the paramatized layer, all
           resultant scores per class be fed through the softmax function, such
           that all scores add to 0, as if it were a logistic prediction of 3
-          instead of 2.
+          instead of 2 classes.
         </p>
         <p>
           below you can adjust the sliders to see real time predictions made by
@@ -102,7 +106,7 @@ function App() {
           <img id="softGraph" src={svmMoons} alt="..."></img>
         </div>
         <p>
-          +add latex+ You may use the slider to see predictions made by the same
+          You may use the slider to see predictions made by the same
           model
         </p>
         <XYPredictor
@@ -115,11 +119,19 @@ function App() {
 
       <div className="section" id="Random-Forest">
         <h1>Random Forest</h1>
-        <p> exp 1 </p>
+        <p>
+          A Random Forest classifier is another popular algorithm known as an 'ensemble'. 
+          Multiple 'child' models are to vote on the best class and all class votes are 
+          collated into the final prediction. 
+        </p>
         <div className="graph">
-          <img id="softGraph" src={RandomForest} alt="..."></img>
+          <img id="softGraph" src={randomForest} alt="..."></img>
         </div>
-        <p> exp 2 </p>
+        <p> 
+          The sub models in question are know as <b>decision trees</b> that make predictions based of a set of 
+          non-paramtetric 'gates' for each input feature.
+          The model throws samples down different directions of the decision tree based off these trained threshold values.
+        </p>
         <XYPredictor
           classifier={"RandomForest"}
           labels={["square", "triangle"]}
