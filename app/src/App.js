@@ -15,7 +15,6 @@ import arrow from "./assets/back-svgrepo-com.svg";
  * TODO
  *  optional:
  *    add latex
- *    move sun to fixed
  *
  */
 
@@ -36,23 +35,29 @@ function App() {
   return (
     <div className="App">
       <Title image={flower} />
-      <Appendix arrow={arrow}/>
+      <Appendix arrow={arrow} />
+
       <button id="color-switcher" onClick={() => switchColors()}>
-        <img src={sun} alt=" >> invert colors << "/>
+        <img src={sun} alt=" >> invert colors << " />
       </button>
       <div className="section" id="About">
         <p>
           This website is a beginner project im using to develope skills in web
-          frameworks, data science and machine learning. Dont actually use
-          this website for learning about these models as the explanations are pretty bad. 
+          frameworks, data science and machine learning. Dont actually use this
+          website for learning about these models as the explanations are pretty
+          bad.
         </p>
         <p>
-          You can view the jupyter notebook used to create the models and diagrams either
-          from within the git repo or on google collab <a href='https://colab.research.google.com/drive/13G2f7gqCxqQL72dSehzz9lSDlnvZIKQc?usp=sharing'>here</a>
+          You can view the jupyter notebook used to create the models and
+          diagrams either from within the git repo or on google collab{" "}
+          <a href="https://colab.research.google.com/drive/13G2f7gqCxqQL72dSehzz9lSDlnvZIKQc?usp=sharing">
+            here
+          </a>
         </p>
       </div>
 
       <div className="section" id="Softmax">
+        <hr></hr>
         <h1>Softmax</h1>
         <p>
           Also recognized as multinomal logistic regression, Softmax regression
@@ -85,6 +90,8 @@ function App() {
       </div>
 
       <div className="section" id="SVM">
+        <hr></hr>
+
         <h1>SVM</h1>
         <p>
           Support vector machine is a powerful algorithm that optimizes its
@@ -95,7 +102,7 @@ function App() {
           the graphs below.
         </p>
         <div className="graph">
-          <img id="softGraph" src={svmRandom} alt="..."></img>
+          <img id="sEoftGraph" src={svmRandom} alt="..."></img>
         </div>
         <p>
           In a cartesion space, SVM only really shines when the boundary between
@@ -105,10 +112,7 @@ function App() {
         <div className="graph">
           <img id="softGraph" src={svmMoons} alt="..."></img>
         </div>
-        <p>
-          You may use the slider to see predictions made by the same
-          model
-        </p>
+        <p>You may use the slider to see predictions made by the same model</p>
         <XYPredictor
           classifier={"SVC"}
           labels={["square", "triangle"]}
@@ -118,19 +122,21 @@ function App() {
       </div>
 
       <div className="section" id="Random-Forest">
+        <hr></hr>
         <h1>Random Forest</h1>
         <p>
-          A Random Forest classifier is another popular algorithm known as an 'ensemble'. 
-          Multiple 'child' models are to vote on the best class and all class votes are 
-          collated into the final prediction. 
+          A Random Forest classifier is another popular algorithm known as an
+          'ensemble'. Multiple 'child' models are to vote on the best class and
+          all class votes are collated into the final prediction.
         </p>
         <div className="graph">
           <img id="softGraph" src={randomForest} alt="..."></img>
         </div>
-        <p> 
-          The sub models in question are know as <b>decision trees</b> that make predictions based of a set of 
-          non-paramtetric 'gates' for each input feature.
-          The model throws samples down different directions of the decision tree based off these trained threshold values.
+        <p>
+          The sub models in question are know as <b>decision trees</b> that make
+          predictions based of a set of non-paramtetric 'gates' for each input
+          feature. The model throws samples down different directions of the
+          decision tree based off these trained threshold values.
         </p>
         <XYPredictor
           classifier={"RandomForest"}
