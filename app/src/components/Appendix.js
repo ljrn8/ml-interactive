@@ -1,6 +1,6 @@
 import React from "react";
 
-const Appendix = () => {
+const Appendix = ({ arrow }) => {
   // const myRef = useRef(null); ?
 
   /* const scrollTo = (ref) => {
@@ -24,6 +24,7 @@ const Appendix = () => {
 
   return (
     <nav>
+      <button id="up-arrow" onClick={() => scrollTo('#title-logo')}><img src={arrow} alt='back'/></button>
       <ul className="nav-list">
         <li className="nav-link">
           <button onClick={() => scrollTo("#About", true)}>

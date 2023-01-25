@@ -1,7 +1,6 @@
 :root {
-  --background-color: rgb(26, 26, 26);
-  --foreground-color-primary: rgb(236, 236, 236);
-  --foreground-color-unchanging: var(--foreground-color-primary);
+  --background-color: rgb(28, 32, 32);
+  --foreground-color-primary: rgb(216, 216, 216);
   scroll-behavior: smooth;
 }
 
@@ -34,23 +33,20 @@ code {
     monospace;
 }
 
-#title-logo, #title-logo-2 {
-  width: 70rem;
+#title-logo {
+  width: 20rem;
   position: absolute;
-  top: -5rem;
+  top: 1rem;
   left: 0;
   right: 0;
   margin: 0 auto;
   z-index: 0;
   overflow:hidden;
-  animation: App-logo-spin infinite 250s linear;
+  animation: App-logo-spin infinite 210s linear;
+  filter: invert(58%) sepia(9%) saturate(11%) hue-rotate(323deg) brightness(154%) contrast(87%);
 }
 
-#title-logo-2 { 
-  top: 1rem;
-  width: 60rem;
-  animation: App-logo-spin-anti infinite 180s linear 
-}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -76,7 +72,7 @@ header.title {
 
 
 ul.nav-list {
-  margin-top: 15rem;
+  margin-top: 4rem;
   font-size: large;
 }
 
@@ -95,12 +91,10 @@ li.nav-link {
 }
 
 .graph {
-  background-color: var(--foreground-color-unchanging);
+  background-color: var(--foreground-color-primary);
+  padding: 2rem;
 }
 
-.graph > img#softGraph {
-  filter: brightness(93%);
-}
 
 .predictor {
   position: absolute;
@@ -126,6 +120,7 @@ p {
 p.score {
   padding-left: 0;
   padding-right: 0;
+  filter: brightness(80%);
 }
 
 button {
@@ -142,11 +137,43 @@ button:hover {
   color: rgb(222, 144, 144);
 }
 
-button#color-switcher  > img {
-  position: relative;
-  width: auto;
-  margin: auto;
-  text-align: center;
-  width: 30%;
+button#color-switcher {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
+
+button#color-switcher > img {
+  filter: invert(58%) sepia(9%) saturate(11%) hue-rotate(323deg) brightness(154%) contrast(87%);
+  animation: App-logo-spin-anti infinite 210s linear;
+  margin-top: 1rem;
+  width: 60px;
+  margin-right: 10px;
+}
+
+button#color-switcher:hover {
+  filter: invert(85%) sepia(11%) saturate(2976%) hue-rotate(302deg) brightness(160%) contrast(75%);
+}
+
+button#up-arrow > img {
+  width: 80px;
+}
+
+button#up-arrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 40px;
+  margin-left: 30px;
+  z-index: 2;
+  opacity: 20%;
+  transform: scaleX(-1) rotate(90deg);
+  filter: brightness(300%)
+}
+
+button#up-arrow:hover {
+  filter: brightness(10%)
+}
+
+
 

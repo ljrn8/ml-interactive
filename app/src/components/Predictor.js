@@ -8,6 +8,7 @@ const XYPredictor = ({ classifier, labels, Xrange, Yrange }) => {
   const [x, setX] = useState(2);
   const [y, setY] = useState(3.2);
 
+
   useEffect(() => {
     fetch(`/predict?classifier=${classifier}&y=${y}&x=${x}`)
       .then((res) => res.json())
@@ -23,13 +24,15 @@ const XYPredictor = ({ classifier, labels, Xrange, Yrange }) => {
     }
   };
 
+  const labelColors =['#A3B3E8 ', '#E8C4A3 ', '#A3E8B0'];
+
   const mapScores = () => {
     return scores.map((score, index) => {
       let style = score === scores.max ? "italic" : "None";
       return (
         <p
           className="score"
-          style={{ fontStyle: { style } }}
+          style={{ fontStyle: { style }, color: labelColors[index] }}
           key={labels[index]}
         >
           {score} {labels[index]}
@@ -37,6 +40,7 @@ const XYPredictor = ({ classifier, labels, Xrange, Yrange }) => {
       );
     });
   };
+
 
   return (
     <div className="predictor">
