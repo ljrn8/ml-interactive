@@ -1,6 +1,6 @@
 :root {
-  --background-color: rgb(48, 53, 53);
-  --foreground-color-primary: rgb(216, 216, 216);
+  --background-color: rgb(40, 40, 40);
+  --foreground-color-primary: rgb(200, 200, 200);
   --accent: rgb(222, 144, 144);
   scroll-behavior: smooth;
 }
@@ -71,6 +71,12 @@ header.title {
 }
 
 
+img.flower { 
+  filter: invert(58%) sepia(9%) saturate(11%) hue-rotate(323deg) brightness(154%) contrast(87%);
+  width: 7rem;
+  animation: App-logo-spin infinite 210s linear;
+}
+
 ul.nav-list {
   margin-top: 4rem;
   font-size: large;
@@ -93,7 +99,6 @@ li.nav-link {
 .graph {
   background-color: var(--foreground-color-primary);
   padding: 2rem;
-
 }
 
 

@@ -34,7 +34,8 @@ function App() {
 
   return (
     <div className="App">
-      <Title image={flower} />
+	  <title>Interactive ML</title>
+	  <Title image={flower} />
       <Appendix arrow={arrow} />
 
       <button id="color-switcher" onClick={() => switchColors()}>
@@ -56,8 +57,15 @@ function App() {
         </p>
       </div>
 
+
       <div className="section" id="Softmax">
+
+        <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
         <hr></hr>
+
+
         <h1>Softmax</h1>
         <p>
           Also recognized as multinomal logistic regression, Softmax regression
@@ -90,8 +98,10 @@ function App() {
       </div>
 
       <div className="section" id="SVM">
+       <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
         <hr></hr>
-
         <h1>SVM</h1>
         <p>
           Support vector machine is a powerful algorithm that optimizes its
@@ -102,7 +112,7 @@ function App() {
           the graphs below.
         </p>
         <div className="graph">
-          <img id="sEoftGraph" src={svmRandom} alt="..."></img>
+          <img id="softGraph" src={svmRandom} alt="..."></img>
         </div>
         <p>
           In a cartesion space, SVM only really shines when the boundary between
@@ -122,6 +132,9 @@ function App() {
       </div>
 
       <div className="section" id="Random-Forest">
+       <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
+        <img src={flower} alt="..." class="flower"></img>
         <hr></hr>
         <h1>Random Forest</h1>
         <p>
